@@ -350,7 +350,21 @@ body {
 }
 
 .notification-dropdown {
-    display: flex;
+    display: none;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 14px;
+    border: 1px solid #DBDBDB;
+    width: 383px;
+    background: #FFF;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+}
+
+.account-dropdown {
+    display: none;
     padding: 16px;
     flex-direction: column;
     align-items: flex-start;
@@ -374,6 +388,17 @@ body {
     align-items: center;
     justify-content: space-between !important;
     width: 100%;
+
+}
+
+.account-dropdown-contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    width: 100%;
+    background: #F1F1F1;
+    padding: 4px 12px 4px 8px;
+    border-radius: 8px;
 }
 
 .notification-dropdown-contents {
@@ -501,5 +526,12 @@ body {
         top: 50px !important;
         right: 0px !important;
     }
-    
+
+    .account-dropdown {
+        width: 90vw;
+        top: 50px !important;
+        right: 0px !important;
+    }
+
+
 }

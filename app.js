@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     </svg>
                 `;
 
-                // Add rotate fade-in animation class
                 svg.classList.add('rotate-fade-in');
             } else {
                 svg.innerHTML = `
@@ -61,14 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     </svg>
                 `;
 
-                // Remove rotate fade-in animation class
                 svg.classList.remove('rotate-fade-in');
             }
 
-            // Trigger the animation
             void svg.offsetWidth;
 
-            // Add fade-in animation class
             svg.classList.add('fade-in');
             setTimeout(() => {
                 svg.classList.remove('fade-in');
@@ -87,7 +83,7 @@ const toggleContentVisibility = () => {
     const svg = document.getElementById('toggle-svg');
     const contents = document.querySelectorAll('.setup-guide-contents');
 
-    contents.forEach(function(content) {
+    contents.forEach((content) => {
       if (content.style.display === 'none' || content.style.display === '') {
         content.style.display = 'flex';
         svg.innerHTML = '<path fill-rule="evenodd" clip-rule="evenodd" d="M15.0303 12.2803C14.7374 12.5732 14.2626 12.5732 13.9697 12.2803L10.5 8.81066L7.03033 12.2803C6.73744 12.5732 6.26256 12.5732 5.96967 12.2803C5.67678 11.9874 5.67678 11.5126 5.96967 11.2197L9.96967 7.21967C10.2626 6.92678 10.7374 6.92678 11.0303 7.21967L15.0303 11.2197C15.3232 11.5126 15.3232 11.9874 15.0303 12.2803Z" fill="#4A4A4A" />';
@@ -97,3 +93,18 @@ const toggleContentVisibility = () => {
       }
     });
   }
+
+  const notificationToggle = document.getElementById('notificationToggle');
+  const notificationDropdown = document.querySelector('.notification-dropdown');
+  const notificationToggle2 = document.getElementById('notificationToggle2');
+  const accountDropdown = document.querySelector('.account-dropdown');
+
+  notificationToggle.addEventListener('click', () => {
+    accountDropdown.style.display = 'none';
+    notificationDropdown.style.display = (notificationDropdown.style.display === 'none' || notificationDropdown.style.display === '') ? 'flex' : 'none';
+  });
+
+  notificationToggle2.addEventListener('click', () => {
+    notificationDropdown.style.display = 'none';
+    accountDropdown.style.display = (accountDropdown.style.display === 'none' || accountDropdown.style.display === '') ? 'flex' : 'none';
+  });
